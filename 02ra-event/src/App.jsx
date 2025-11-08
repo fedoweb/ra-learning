@@ -2,43 +2,20 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { UserProfile } from './components/UserProfile/UserProfile'
-import { UserProfileCC } from './components/UserProfileCC/UserProfileCC'
-import { RestrictedArea } from './components/RestrictedArea/RestrictedArea'
-import { ShoppingList } from './components/ShoppingList/ShoppingList'
-
-const data = {
-  name: 'Nasti',
-  status: 'Administrator',
-  avatar: './avatar.webp',
-  hasSkills: true,
-}
-
-const products = [
-  {
-    id: 1,
-    name: 'Eggs'
-  },
-  {
-    id: 2,
-    name: 'Meat'
-  },
-  {
-    id: 3,
-    name: 'Milk'
-  }
-]
+import LikeButton from './components/LikeButton/LikeButton'
+import FormButton from './components/FormButton/FormButton'
+import ProductList from './components/ProductList/ProductList'
+import ClassLikeButton from './components/ClassLikeButton/ClassLikeButton'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <RestrictedArea allowed={true}>
-      <UserProfile data={data}/>
-      <ShoppingList products={products}/>
-    </RestrictedArea>
-    {/* <UserProfileCC data={data}/> */}
+    <ClassLikeButton/>
+    <ProductList/>
+    <LikeButton/>
+    <FormButton/>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

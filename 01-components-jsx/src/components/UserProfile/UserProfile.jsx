@@ -7,6 +7,10 @@ export function UserProfile({ data }) {
       <div className="user-profile__content">
         <h3 className="user-profile__name">{data.name}</h3>
         <div className="user-profile__status">{data.status}</div>
+
+        { data.hasSkills && (
+          <div className="user-profile__details">Есть дополнительные навыки</div>
+        )}
       </div>
     </div>
   )
