@@ -5,6 +5,8 @@ import './App.css'
 import UserProfile from './components/UserProfile';
 import UserCard from './components/UserCard';
 import Button from './components/ButtonProps'
+import { ToDoList } from './components/ToDoList';
+import { DynamicToDoList } from './components/DynamicToDoList'
 
 function App() {
   const user = {
@@ -14,15 +16,17 @@ function App() {
   };
 
   const toDo = [
-    'дело 1',
-    'дело 2',
-    'дело 3',
+    {id: '1', title: 'дело 1', done: true},
+    {id: '2', title: 'дело 2'},
+    {id: '3', title: 'дело 3', done: false},
   ]
 
   const handleClick = () => console.log('Карточка нажата');
 
   return (
     <>
+      <DynamicToDoList tasks={toDo}/>
+      <ToDoList tasks={toDo}/>
       <UserProfile user={user} />
 
       <UserCard 
